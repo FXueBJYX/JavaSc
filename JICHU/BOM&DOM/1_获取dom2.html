@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他dom</title>
+</head>
+<body>
+    <div class="div">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div id="box"></div>
+    <script>
+        // query那个获取所有   类就是.    id就是#  和类选择器一样
+        // var oDiv = document.getElementsByClassName("div");
+        // var oDiv1 = document.querySelectorAll("div");
+        // console.log(oDiv,oDiv1);
+
+
+        // 带Node的是都包括的  有回车符啥的  
+        // 节点和元素    节点啥都有   元素只有html标签
+        // element是正经节点没有回车符 
+        // 父子兄弟都能获取 
+        var oDiv = document.querySelector("div");
+        var oDiv3 = document.querySelector("#div3");
+        console.log(oDiv.childNodes);
+        console.log(oDiv.children);
+        console.log(oDiv3.nextElementSibling);
+        console.log(oDiv3.nextSibling);
+    </script>
+</body>
+</html>

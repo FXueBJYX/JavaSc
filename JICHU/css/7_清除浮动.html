@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            height: 200px;
+            width: 200px;
+            background: violet;
+            float: left;
+        }
+        #d2{
+            height: 200px;
+            width: 300px;
+            background: turquoise;
+            float: left;
+        }
+        h2{
+            height: 100px;
+            background: thistle;
+        }
+        /* 1.给父元素高度 */
+        /* #d0{
+            height: 200px;
+        } */
+        /* 2.给父元素溢出隐藏 */
+        /* #d0{
+            overflow: hidden;
+        } */
+        /* #clear{
+            clear: both;
+        } */
+        /* 伪元素 */
+        /* #d0::after{
+            content:"";
+            转换块级元素
+            display: block;
+            clear: both;
+        } */
+        /* 4.父元素添加classfix类 */
+        .classfix::after{
+            content: "";
+            /* 转换块级元素 */
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="d0" class="classfix">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <!-- 3.浮动的元素下面加一个元素 clean:both -->
+        <!-- <div id="clear"></div> -->
+        
+    </div>    
+    <h2></h2>
+</body>
+</html>

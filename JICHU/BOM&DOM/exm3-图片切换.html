@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 600px;
+            /* height: 301px; */
+            /* background-color: yellowgreen; */
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        #big{
+            width: 600px;
+            height: 405px;
+            /* background-color: aqua; */
+            border-bottom: 1px solid #000;
+            text-align: center;
+        }
+        #list{
+            /* width: 403px;
+            height: 100px; */
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            float: left;
+            /* height: 100px; */
+            width: 149px;
+            list-style: none;
+            /* background-color: rgb(21, 255, 0); */
+            border-right: 1px solid #000;
+            size: 100%;
+        }
+        li img{
+            width: 150px;
+            size: 100%;
+        }
+        li:last-child{
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="big">
+            <img src="../image/slider1.jpg" alt="">
+        </div>
+        <div id="list1">
+            <ul id="list">
+                <li> <img src="../image/slider1.jpg" alt=""> </li>
+                <li> <img src="../image/slider2.jpg" alt=""> </li>
+                <li> <img src="../image/slider3.jpg" alt=""> </li>
+                <li> <img src="../image/slider4.jpg" alt=""> </li>
+            </ul>
+        </div>    
+    </div>
+    <script>
+        var bigImg = document.getElementById("big");
+        var smallImg = document.getElementById("list1");
+        var imgArr = smallImg.getElementsByTagName("img");
+
+        // osmallImg.onmousemove
+        // for(var i = 0;i<imgArr.length;i++){
+        //     imgArr[i].onmouseover = function(){
+        //         var _imgSrc = this.getAttribute("src");
+        //         bigImg.setAttribute("src",_imgSrc);
+        //     }
+        // }
+        for(var i=0;i<imgArr.length;i++){
+            imgArr[i].onmouseover = function(){
+                var _imgSrc = this.getAttribute("src");
+                bigImg.setAttribute("src",_imgSrc)
+            }
+        }
+    </script>
+</body>
+</html>

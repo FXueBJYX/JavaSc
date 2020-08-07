@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <style>
+        .box1{
+            height: 512px;
+            width: 512px;
+            background-image: url(http://pic95.nipic.com/file/20160422/22291414_134107239214_2.jpg);
+            background-size: contain;
+            position: relative;
+            left: 0;
+            top: 0;
+            float: left;
+            margin-right: 20px;
+        }
+        .box{
+            height: 512px;
+            width:512px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+        }
+        .box2{
+            height:1024px;
+            width: 1024px;
+            background-image: url(http://pic95.nipic.com/file/20160422/22291414_134107239214_2.jpg);
+            background-size: 100%;
+            position: absolute;
+            
+        }
+        .div1{
+            height: 256px;
+            width: 256px;
+            background: rgba(0, 0, 0, 0.1);
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="div1"></div>
+    </div>
+    <div class="box">
+        <div class="box2"></div>
+        <!-- <img class="box2" src="http://pic95.nipic.com/file/20160422/22291414_134107239214_2.jpg" alt=""> -->
+    </div>
+    <script>
+        var oBox1=document.getElementsByClassName("box1")[0];
+        var oDiv1 = document.getElementsByClassName("div1")[0];
+        var oBox2 = document.getElementsByClassName("box2")[0];
+
+        oBox1.onmousemove=function(event){
+
+            var eX=event.clientX - 125.5;
+            var eY=event.clientY - 125.5;
+
+            if(eX<0){
+                eX=0;
+            }
+            if(eY<0){
+                eY=0;
+            }
+            if(eX>256){
+                eX=256;
+            }
+            if(eY>256){
+                eY=256;
+            }
+
+
+
+            oDiv1.style.top=eY +"px";
+            oDiv1.style.left=eX +"px";
+
+            oBox2.style.top=-2*eY + "px";
+            oBox2.style.left=-2*eX + "px";
+        }
+    </script>
+</body>
+</html>

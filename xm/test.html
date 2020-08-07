@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bili</title>
+    <style>
+        /* 强制将网页的边框距离清零 */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /* 清除浮动 */
+        .classfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .nav{
+            background: #fb7299;
+            
+        }
+        /* 背景颜色和列表的点 */
+        .na{
+            width: 1226px;
+            background: #fb7299;
+            /* color: white; */
+            list-style: none;
+            margin: 0 auto;
+        }
+        /* 浮动和字体 */
+        .nav-list{
+            float: left;
+            height: 56px;
+            line-height: 56px;
+        }
+        /* 链接字和无下划线 */
+        .nav-list a{
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        /* 右面的 */
+        .nav-listr{
+            float: right;
+            height: 56px;
+            line-height: 56px;
+        }
+        .nav-listr a{
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        .nav-listr button{
+            width: 100px;
+            height: 36px;
+            color: white;
+            background: #fb7299;
+            font-size: 14px;
+
+        }
+        .nav-listr input{
+            width: 444px;
+            height: 34px;
+        }
+    </style>
+</head>
+<body style="height: 3000px;">
+    <div id="nav">
+        <ul class="na classfix">
+            <li class="nav-list"></li>
+            <li class="nav-list"><a href="#">主站</a></li>
+            <li class="nav-list"><a href="#">番剧</a></li>
+            <li class="nav-list"><a href="#">游戏中心</a></li>
+            <li class="nav-list"><a href="#">直播</a></li>
+            <li class="nav-list"><a href="#">会员购</a></li>
+            <li class="nav-list"><a href="#">漫画</a></li>
+            <li class="nav-list"><a href="#">BML</a></li>
+            <li class="nav-list"><a href="#">下载APP</a></li>
+
+            <li class="nav-list"><input type="text"></li>
+            
+            <li class="nav-listr"><button>投稿</button></li>
+            <li class="nav-listr"><a href="#">注册</a></li>
+            <li class="nav-listr"><a href="#">登录</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

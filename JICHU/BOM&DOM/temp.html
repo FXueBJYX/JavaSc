@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习测试</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 60px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox=document.getElementById("box");
+        var timer=null;
+
+        oBox.onmouseover = function(){
+            clearInterval(timer);
+            var wid=200;
+            var _this=this;
+            timer=setInterval(function(){
+                if(wid<500){
+                    wid +=10;
+                    // _this.style.width=wid;
+                    _this.style.width=wid+"px";
+                }
+            },10)
+        }
+
+        oBox.onmouseout = function(){
+            clearInterval(timer);
+            var wid=this.offsetWidth;
+            var _this=this;
+            timer=setInterval(function () {
+                if(wid>200){
+                    wid -= 10;
+                    _this.style.width=wid+"px";
+                }
+            },10)
+        }
+    </script>
+</body>
+</html>

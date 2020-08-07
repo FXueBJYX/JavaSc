@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖动正方形</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        oBox.onmousedown = function (event) {
+            var _left=event.clientX-oBox.offsetLeft;
+            var _top=event.clientY-oBox.offsetTop;
+            var _event=event;
+            // oBox.onmousemove = function (event1) {
+            document.onmousemove = function (event1) {
+
+                oBox.style.top=event1.clientY - _top + "px";
+                oBox.style.left=event1.clientX - _left + "px";
+
+                // oBox.style.top = event1.clientY - (_event.clientY - oBox.offsetTop) +"px";
+                // oBox.style.left = event1.clientX - (_event.clientX - oBox.offsetLeft) + "px";
+
+                // console.log(event1.clientX,event1.clientY);
+                // console.log(event.clientX,event.clientY);
+                // console.log(oBox.offsetLeft,oBox.offsetTop);
+                // console.log(event1.clientX - (event.clientX - oBox.offsetLeft));
+            }
+
+
+        }
+
+
+
+        oBox.onmouseup = function () {
+            // oBox.onmousemove = null;
+            document.onmousemove = null;
+
+            // oBox.style.top = event.clientY + "px";
+            // oBox.style.left = event.clientX + "px";
+        }
+
+
+    </script>
+</body>
+
+</html>

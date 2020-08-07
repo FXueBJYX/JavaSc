@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 300px;
+            background-color: aqua;
+            display: none;
+            position: fixed;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <ul>
+            <li>11</li>
+            <li>22</li>
+            <li>33</li>
+        </ul>
+    </div>
+    
+    <script>
+        var oDiv = document.getElementsByClassName("div1")[0];
+        var root = document.documentElement
+        root.oncontextmenu = function(event){
+            var x=event.clientX;
+            var y=event.clientY;
+            console.log("点击");
+            oDiv.style.top = y + "px";
+            oDiv.style.left = x + "px";
+            // console.log(event);
+
+            event.preventDefault();
+            oDiv.style.display="block";
+        }
+        root.onclick=function (event) {
+            oDiv.style.display="none";
+        }
+    </script>
+</body>
+</html>

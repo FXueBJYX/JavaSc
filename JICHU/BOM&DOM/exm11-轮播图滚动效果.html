@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图滚</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            border: 5px solid white;
+            margin: 50px auto;
+            position: relative;
+        }
+        .img-box{
+            overflow: hidden;
+        }
+        .img-box ul{
+            width: 2450px;
+            height: 170px;
+        }
+        .img-box .active{
+            display: block;
+        }
+        .img-list{
+            /* display: none; */
+            float: left;
+        }
+        .ic{
+            position: absolute;
+            /* left: 0; */
+            bottom: 10px;
+            width: 100%;
+        }
+        .il-list, .ir-list{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f90;
+            color: white;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .ic-left{
+            float: left;
+
+        }
+        .ic-right{
+            float: right;
+        }
+        .ic .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-box">
+            <ul>
+                <li class="img-list active"><img src="../image/images/01.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/02.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/03.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/04.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="ic">
+            <div class="ic-left">
+                <div class="il-list">&lt;</div>
+                <div class="il-list">&gt;</div>
+            </div>
+            <div class="ic-right">
+                <div class="ir-list active">1</div>
+                <div class="ir-list">2</div>
+                <div class="ir-list">3</div>
+                <div class="ir-list">4</div>
+                <div class="ir-list">5</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numList=document.getElementsByClassName("ir-list");
+        var imgList=document.getElementsByClassName("img-list");
+        var imgBox=document.getElementsByClassName("img-box")[0];
+        for(var i=0;i<numList.length;i++){
+            
+            var timer=setInterval(function(){
+                imgBox.style.left=imgBox.offsetLeft - 10 +"px";
+                
+            },16)
+        }
+    </script>
+</body>
+</html>

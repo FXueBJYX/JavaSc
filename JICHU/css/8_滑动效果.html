@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动</title>
+    <style>
+        #h{
+            float: right;
+            
+        }
+        .hua{
+            float: left;
+            background-color: blueviolet;
+            height: 50px;
+            width: 120px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .num{
+            background-color: burlywood;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .list{
+            background-color: coral;
+            height: 100px;
+            width: 320px;
+
+            position: absolute;
+            right: 0;
+            top: 50px;
+            text-align: center;
+            line-height: 100px;
+            /* display: none; */
+
+            height: 0;
+            overflow: hidden;
+            transition: height 0.5s ease;
+        }
+        .hua:hover .list{
+            /* display: block; */
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="h">
+        <div class="hua">
+            <div class="num">
+                11111
+            </div>
+            <div class="list">
+                啦啦啦啦啦啦啦
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>

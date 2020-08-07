@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一条杠的js动态</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 150px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- 
+        用定时函数实现js动态
+        一定要加“px”!!!!!!!!!
+
+        宽度     用this.style.width赋值
+                 用offsetWidth获取
+     -->
+    <script>
+        var oBox=document.getElementsByClassName("box")[0];
+        var timer=null;
+        oBox.onmouseover=function(){
+            clearInterval(timer);
+            var wid=150;
+            var _this=this;
+            timer = setInterval(function(){
+                if(wid<=400){
+                    wid += 10;
+                    _this.style.width=wid+"px";
+                }else{
+                    clearInterval(timer);
+                }
+                
+            },16)
+            // oBox.style.width="300px";
+        }
+        oBox.onmouseout=function(){
+            clearInterval(timer);
+            var _this=this;
+            var wid=this.offsetWidth;
+            timer=setInterval(function(){
+                if(wid>150){
+                    wid-=10;
+                    _this.style.width=wid+"px";
+                }else{
+                    clearInterval(timer);
+                }
+            },16)
+            // oBox.style.width="150px";
+        }
+    </script>
+</body>
+</html>

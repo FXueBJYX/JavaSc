@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab标签</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .nav-li{
+            height: 50px;
+            background-color: black;
+        }
+        .lis{
+            float: left;
+            color: white;
+            list-style: none;
+            width: 70px;
+            line-height: 50px;
+            text-align: center;
+
+        }
+        .active{
+            background-color: rgb(233, 233, 233);
+            color: black !important;   
+        }
+        .content-list{
+            display: none;
+        }
+        #content .active1{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="nav">
+            <ul class="nav-li">
+                <li class="lis active">第一</li>
+                <li class="lis">第二</li>
+                <li class="lis">第三</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="content-list active1"><h2>1内容</h2></div>
+            <div class="content-list"><h2>2内容</h2></div>
+            <div class="content-list"><h2>3内容</h2></div>
+
+        </div>
+    </div>
+    <script>
+        var oLis=document.getElementsByTagName("li");
+        var oCon=document.getElementsByClassName("content-list");
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].index=i;
+            oLis[i].onmousemove=function(){
+                for(var j=0;j<oLis.length;j++){
+                    oLis[j].setAttribute("class","lis");
+                    oCon[j].setAttribute("class","content-list");
+                }
+                // this.setAttribute("class","lis active");
+                this.classList.add("active");
+                oCon[this.index].classList.add("active1");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2_选择器</title>
+        <style>
+            /* 标签选择器  会选择所有div */
+            /* div {
+                height: 100px;
+                width: 100px;
+                background: greenyellow;
+            } */
+
+            /* id选择器 id唯一 */
+            #q1 {
+                height: 10px;
+                width: 50px;
+                background: hotpink;
+            }
+            /* class 类选择器 */
+            /* .l1{
+                height: 130px;
+                width: 130px;
+                background: khaki;
+            } */
+            /* 后代选择器 */
+            ul .l1{
+                height: 20px;
+                width: 50px;
+                background: lightpink;
+            }
+            /* 子代选择器 */
+            ul > .l1{
+                background: mediumvioletred;
+            }
+            /* 伪选择器  鼠标移动到会有变化 */
+            a:hover{
+                color: rgb(240, 240, 240);
+                background: rgb(4, 91, 252);
+            }
+            /* 群组选择器 多个共用一个样式 */
+            /* .l1, #q1{
+                width: 200px;
+                height: 20px;
+                background: magenta;
+            } */
+
+        </style>
+    </head>
+
+    <body>
+        <div id="q1">
+            hello
+        </div>
+
+        <ul>
+            <li class="l1">
+                <h3 class="l1">我的</h3>
+            </li>
+            <li>2</li>
+            <li class="l1">3</li>
+        </ul>
+
+        <div>
+            <p class="l1">啦啦啦啦啦啦</p>
+        </div>
+
+        <a href="http://www.baidu.com" target="_blank">百度</a>
+    </body>
+
+</html>

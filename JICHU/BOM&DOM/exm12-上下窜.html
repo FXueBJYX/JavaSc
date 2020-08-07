@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上下窜</title>
+</head>
+
+<body>
+    <div id=box>
+        <div id="div1">
+            <span>div1</span>
+            <button class="up">向上</button>
+            <button class="down">向下</button>
+        </div>
+        <div id="div2">
+            <span>div2</span>
+            <button class="up">向上</button>
+            <button class="down">向下</button>
+        </div>
+        <div id="div3">
+            <span>div3</span>
+            <button class="up">向上</button>
+            <button class="down">向下</button>
+        </div>
+    </div>
+
+
+    <script>
+        var oBox = document.querySelector("#box");
+        var oDown = document.querySelectorAll(".down");
+        var oUp = document.querySelectorAll(".up");
+
+
+        for (var i = 0; i < oDown.length; i++) {
+            oDown[i].onclick = function () {
+                var parentE = this.parentElement;
+                var parentN = parentE.nextElementSibling;
+                if(parentN){
+                    oBox.insertBefore(parentN,parentE);
+                }
+            }
+
+            oUp[i].onclick = function(){
+                var parentE = this.parentElement;
+                var parentP = parentE.previousElementSibling;
+                if(parentP){
+                    oBox.insertBefore(parentE,parentP);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

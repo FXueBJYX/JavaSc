@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>进度条</title>
+    <style>
+        #div{
+            height: 30px;
+            width: 300px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            /* overflow: hidden; */
+            
+
+        }
+        #div1{
+            height: 30px;
+            width: 0;
+            background-color: rgb(255, 255, 0);
+            line-height: 30px;
+            border-radius: 5px;
+            /* background: none; */
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <div id="div1">
+            <div id="div2">0%</div>
+        </div>
+    </div>
+    <button>start</button>
+    
+    <script>
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oDiv1 = document.getElementById("div1");
+        var oDiv2 = document.getElementById("div2");
+        oBtn.onclick = function(){
+            var wid=0;
+            var num=0;
+            // window.requestAnimationFrame(run);
+            var timer=setInterval(function(){
+                
+                if(wid<300){
+                    wid += 3;
+                    oDiv1.style.width=wid +"px";
+                    num += 1;
+                    oDiv2.innerText=num+"%";
+                }
+                // if(num<100){
+                    
+                // }
+                
+            },16)
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+
+}
+body{
+    /* height: 1420px; */
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.content{
+    background-image: url(../img/xmtu.jpg);
+    background-position: top center;
+    height: 588px;
+    margin: 0 auto;
+}
+.content .imgg{
+    
+    overflow: hidden;
+
+}
+.content .imgg .login{
+    width: 410px;
+    height: 556px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 30px;
+    background-color: #fff;
+    text-align: center;
+
+}
+.content .login .nav-tabs{
+    padding: 27px 0 24px;
+    text-align: center;
+    font-size: 24px;
+    color:#666;
+}
+.content .nav-tabs a{
+    color: #666;
+}
+.content .nav-tabs a.active{
+    color: #f56600;
+}
+.content .nav-tabs a:hover{
+    color: #f56600;
+}
+.content .nav-tabs span{
+    width: 1px;
+    height: 24px;
+    margin: 0 35px 0 35px;
+    border: 1px solid #e0e0e0;
+}
+
+
+
+.content .login .form-content{
+    width: 348px;
+    margin: 0 auto;
+}
+.content .form-content input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+.content .form-content .inp-box{
+    width: 306px;
+    height: 22px;
+    padding: 13px 16px 13px 14px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 14px;
+    /* text-align: center; */
+
+
+
+}
+.content .btn-box input
+{
+    height: 50px;
+    width: 338px;
+    background-color: #ff6700;
+    color: #fff;
+    
+}
+.content .btn-box input:hover{
+    cursor: pointer;
+}
+
+.content .login .login-info{
+    
+    text-align: center;
+}
+.content .li-top{
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+.content .li-top a{
+    font-size: 14px;
+    color: #f56600;
+    
+}
+
+.content .li-buttom a{
+    font-size: 14px;
+    color: #999;
+}
+
+.content .other-login{
+    padding: 143px 0 0 0;
+    text-align: center;
+    width: 338px;
+    margin: 0 auto;
+}
+.content .other-login fieldset{
+    border-width: 1px 0 0 0;
+    border-color:  #e0e0e0;
+    border-style: solid;
+    text-align: center;
+    
+    font-size: 15px;
+}
+.content fieldset legend{
+    color: #999;
+}
+
+.content .other-login .plogin{
+    border-radius: 50%;
+    margin: 2px 17px;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.content .other-login .log-qq{
+
+    background: #0288d1 ;
+
+}
+.content .other-login .log-weibo{
+
+    background: #d32f2f ;
+
+}
+.content .other-login .log-alpay{
+
+    background: #0ae ;
+
+}
+.content .other-login .log-wechat{
+
+    background: #00d20d ;
+
+}
+#login{
+    text-align: center;
+    margin: 0 40px;
+    width: 300px;
+    height: 60px;
+}
+.content .picon{
+    background-image: url("../img/otherlogin.png");
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: 4px auto 0;
+
+}
+.content .plogin .icon-qq{
+    background-position: -19px 0;
+
+}
+.content .plogin .icon-weibo{
+    background-position: -38px 0;
+}
+.content .plogin .icon-alpay{
+    background-position: -57px 0;
+    width: 25px;
+}
+.content .plogin .icon-wechat{
+    background-position: -83px 0;
+    width: 24px;
+}
+
+
+/* 
+.buttom{
+    padding-top: 100px;
+    text-align: center;
+    
+    
+}
+.but-list li{
+    display: block;
+}
+.but-list a{
+    color: #333;
+}
+.but-p{
+    padding: 10px 0;
+} */
+
+
+/* 底部 */
+.footer{
+    text-align: center;
+    padding-top:100px;
+  }
+  .footer .lang-select-list li{
+    display: inline-block;
+    padding: 0 4px;
+  }
+  .footer .lang-select-list a{
+    color: #333;
+    font-size: 14px;
+  }
+  .footer .nf-intro{
+    padding: 10px 0;
+    font-size: 14px;
+  }

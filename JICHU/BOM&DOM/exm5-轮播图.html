@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            border: 5px solid white;
+            margin: 50px auto;
+            position: relative;
+        }
+        .img-list{
+            display: none;
+        }
+        .img-box .active{
+            display: block;
+        }
+        .ic{
+            position: absolute;
+            /* left: 0; */
+            bottom: 10px;
+            width: 100%;
+        }
+        .il-list, .ir-list{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f90;
+            color: white;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .ic-left{
+            float: left;
+
+        }
+        .ic-right{
+            float: right;
+        }
+        .ic .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-box">
+            <ul>
+                <li class="img-list active"><img src="../image/images/01.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/02.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/03.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/04.jpg" alt=""></li>
+                <li class="img-list"><img src="../image/images/05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="ic">
+            <div class="ic-left">
+                <div class="il-list">&lt;</div>
+                <div class="il-list">&gt;</div>
+            </div>
+            <div class="ic-right">
+                <div class="ir-list active">1</div>
+                <div class="ir-list">2</div>
+                <div class="ir-list">3</div>
+                <div class="ir-list">4</div>
+                <div class="ir-list">5</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numList=document.getElementsByClassName("ir-list");
+        var imgList=document.getElementsByClassName("img-list");
+        var arrList=document.getElementsByClassName("il-list");
+        var oBox=document.getElementsByClassName("box")[0];
+        var tem=0;
+        var index=0;
+        var timer=null;
+
+        // 导航
+        for(var i=0;i<numList.length;i++){
+            numList[i].index = i;
+            numList[i].onmousemove=function(){
+                run(this.index);
+                // for(var j=0;j<numList.length;j++){
+                //     // numList[j].classList.remove("active");
+                //     numList[j].setAttribute("class","ir-list");
+                //     imgList[j].classList.remove("active");
+                // }
+                // tem=this.index;
+                // this.classList.add("active");
+                // imgList[this.index].classList.add("active");
+            }
+        }
+
+        // 向右
+        arrList[1].onclick=function(){
+            var next=(++tem)%5;
+            run(next);
+            // for(var i=0;i<numList.length;i++){
+            //     numList[i].classList.remove("active");
+            //     imgList[i].classList.remove("active");
+            // }
+            // numList[next].classList.add("active");
+            // imgList[next].classList.add("active");
+        }
+
+        // 向左
+        arrList[0].onclick=function(){
+            var pre=--tem;
+            if(pre==-1){
+                pre=4;
+            }
+            run(pre);
+            // for(var i=0;i<numList.length;i++){
+            //     numList[i].classList.remove("active");
+            //     imgList[i].classList.remove("active");
+            // }
+            // numList[pre].classList.add("active");
+            // imgList[pre].classList.add("active");
+        }
+
+        // 切换图片
+        function run(index){
+            for(var i=0;i<numList.length;i++){
+                numList[i].classList.remove("active");
+                imgList[i].classList.remove("active");
+            }
+            numList[index].classList.add("active");
+            imgList[index].classList.add("active");
+            tem=index;
+        }
+
+        // 鼠标移入
+        oBox.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oBox.onmouseout=function(){
+            runtime();
+        }
+
+        // 定时切换
+        function runtime(){
+            timer=setInterval(function(){
+                arrList[1].onclick();
+            },1000)
+        }
+        runtime();
+    </script>
+</body>
+</html>

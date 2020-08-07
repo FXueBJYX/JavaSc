@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = [10,9,30,20,5,80,89,100,3];
+        // for(var i = 0; i<a.length;i++){
+        //     c
+        // }
+        // var a = window.prompt("输入一个数");
+        // document.write(a*a);
+        // document.write(Math.sqrt(a));
+        // console.log(a*a);
+        // console.log(Math.sqrt(a));
+
+        // function num() {
+        //     var b=Math.floor(Math.random()*100);
+        //     console.log(b);
+            
+        // }
+
+
+        // var str = "hello";
+        // var str2 = "2020-07-29";
+        // console.log(str[1]);
+        // console.log(str.charAt(1));                            //取某一位置的字符
+        // console.log(str.indexOf("s"));                         //判断字符串中是否有该字符，有就返回位置，没有就返回-1
+        // console.log(str.replace("ll","aa"));                   //替换字符
+        // console.log(str.slice(1,3));                           //取字符段，起始和终止位置     不包括终止位置的
+        // console.log(str.slice(1));                             //取字符段，起始到最后
+        // console.log(str2.split("-"));                          //替换-并转换成字符串
+        // console.log(str.substr(1,3));                          //取字符，（起始位置，取得字符数目）
+        // console.log(str.substring(1));                         //取字符串，（起始位置）到结束
+
+        // var arr = [1,2,3,4,5];
+        // var arr2 = [6,7,8,9];
+        // arr[5] = 6;                                               //在5的位置加元素
+        // arr.push("a")                                             //直接在后面加，不用指定位置
+        // console.log(arr);
+        // arr.concat(arr2)                                          //连接
+        // console.log(arr,arr2)
+        // console.log(arr.join("-"));                               //每个字符后面加“—-”
+        // arr.pop()                                                 //删除最后一个元素
+        // console.log(arr);
+
+        // console.log(arr.reverse());                               //倒叙
+
+        // console.log(arr.slice(1,3))                               //取一到三的  不包括最后的
+
+        // arr.splice(1,3,"a","b")                                   //替换 一到三  包括最后的
+        // console.log(arr);
+
+        // var str = "10"*1;                                            //乘1  是吧字符串转换成数字类型
+        // var str = "10.1";       
+        // // str = parseInt(str);                                      //转换成整形
+        // str = parseFloat(str);                                       //转换成浮点型
+        // var a = 1+str;
+        // console.log(a);
+
+        // var num = 10.5678;
+        // console.log(Math.ceil(num));                                    //向上取整
+        // console.log(Math.floor(num));                                   //向下取整
+        // console.log(Math.round(num));                                   //四舍五入
+
+        // console.log(Math.random());                                     //生成0-1随机数  
+        
+        // // 生成1-10随机数字
+        // console.log(Math.ceil(Math.random()*10))
+        // console.log(Math.floor(Math.random()*10)+1)
+        // // 生成 0-5随机数字
+        // console.log(Math.floor( Math.random()*6))
+        // // 生成 5-10随机数字
+        // // console.log(Math.floor( Math.random()*6)+5)
+
+        var timer = new Date();                                            //必须新建一个时间对象    new
+        let timerArr = [];
+        timerArr.push(timer.getFullYear());                                //获取当前年
+        timerArr.push(timer.getMonth()+1);                                 //月    需要加1
+        timerArr.push(timer.getDate());                                    //日
+        console.log(timerArr.join("-"));                                   //年月日中间加 -
+        console.log(timer.getDay())                                        //星期
+        console.log(timer.getHours())                                      //小时
+        console.log(timer.getMinutes())                                    //分
+
+
+
+
+
+
+        window.confirm("弹出对话框   选择确定取消");
+        window.prompt("弹出输入框");
+        
+
+
+
+
+
+
+
+    </script>
+    
+    
+
+
+    
+
+</body>
+</html>

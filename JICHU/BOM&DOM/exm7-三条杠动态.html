@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三条杠的js动态</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+
+    <script>
+        var oBox = document.getElementsByClassName("box");
+        var timer1;
+        var timer2;
+        var timer3;
+        var timer;
+
+        // 要给一人分一个，加this   就是当前的对象    不和别人抢
+
+        for(var i=0;i<oBox.length;i++){
+            
+            oBox[i].onmouseover = function () {
+                clearInterval(this.timer);
+                var wid=200;
+                var _this=this;
+                this.timer=setInterval(function(){
+                    if(wid<400){
+                        wid +=10;
+                        _this.style.width=wid+"px";
+                    }else{
+                        clearInterval(_this.timer);
+                    }
+                    
+                },16)
+            }
+            oBox[i].onmouseout = function(){
+                clearInterval(this.timer);
+                var _this=this;
+                var wid=this.offsetWidth;
+                this.timer=setInterval(function(){
+                    if(wid>200){
+                        wid -= 10;
+                        _this.style.width=wid+"px";
+                    }else{
+                        clearInterval(_this.timer);
+                    }
+                    
+                },16)
+            }
+        }
+    </script>
+</body>
+</html>
