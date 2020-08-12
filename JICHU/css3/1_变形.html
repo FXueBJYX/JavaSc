@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css3变形</title>
     <style>
-
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            margin: 500px auto;
+        }
+        .div{
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+            transform: rotate(45deg) scale(.5) translate(100px,100px);
+            /* 为什么就绕左上角转了呢 */
+        }
     </style>
 </head>
 <body>
-    <div>
-        <div></div>
+    <!-- 
+        transform   变形
+                    rotate  旋转   正的就顺时针  负的就逆时针
+                    scale   缩放   小数缩小 大于一的放大
+
+     -->
+    <div class="box">
+        <div class="div">111</div>
     </div>
 </body>
 </html>
