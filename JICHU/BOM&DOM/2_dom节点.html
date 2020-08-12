@@ -6,14 +6,18 @@
     <title>加节点</title>
 </head>
 <body>
-    <div>111</div>
+    <div id="div1">
+        <div id="div2">111</div>
+    </div>
+    
     <script>
-        var oDiv = document.querySelector("div");
+        var oDiv = document.querySelector("#div2");
         var Ho = document.createElement("h2");
+        var oDiv1 = document.querySelector("#div1");
 
         Ho.innerText = "222";
         Ho.style.color = "yellow";
-        oDiv.insertBefore(Ho,oDiv);
+        oDiv1.insertBefore(Ho,oDiv);
     </script>
 </body>
 </html>
