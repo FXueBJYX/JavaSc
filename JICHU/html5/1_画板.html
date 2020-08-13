@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画板</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #ca {
+            background-color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="ca" width="500" height="300"></canvas>
+
+    <script>
+        var oCa = document.querySelector("#ca");
+        var canPic = oCa.getContext("2d");
+        canPic.strokeStyle = "white";
+        oCa.onmousedown = function (event) {
+            canPic.beginPath();
+            canPic.moveTo(event.clientX, event.clientY);
+            oCa.onmousemove = function (event) {
+                canPic.lineTo(event.clientX, event.clientY);
+                canPic.stroke();
+            }
+        }
+
+        // oCa.onmousedown = function (event) {
+        //     canPic.beginPath();
+        //     canPic.moveTo(event.clientX, event.clientY);
+        //     oCa.onmousemove = function (event) {
+        //         canPic.lineTo(event.clientX, event.clientY);
+        //         canPic.stroke();
+        //     }
+        // }
+
+        oCa.onmouseup = function(){
+            oCa.onmousemove = null;
+        }
+    </script>
+</body>
+
+</html>

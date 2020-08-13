@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie函数</title>
+</head>
+<body>
+    <script>
+        var timer = new Date();
+
+
+        function setCookie(key,value,expires) {
+            timer.setDate(timer.getDate()+expires);
+            document.cookie = key+"="+value+";expires="+timer.toUTCString();
+        }
+
+
+        function getCookie(){
+
+        }
+
+
+        function delCookie(key){
+            timer.setDate(timer.getDate()-1);
+            document.cookie = key+"=null;expires="+timer.toUTCString();
+        }
+
+        setCookie("username","ll",1);
+        setCookie("userage","30",1);
+        delCookie("username");
+    </script>
+</body>
+</html>
