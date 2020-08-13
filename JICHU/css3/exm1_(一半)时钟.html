@@ -88,9 +88,9 @@
     </div>
 
     <script>
-        var oHout = document.querySelector(".hour");
-        var oMin = document.querySelector("min");
-        var oSec = document.querySelector("sec");
+        var oHour = document.querySelector(".hour");
+        var oMin = document.querySelector(".min");
+        var oSec = document.querySelector(".sec");
         var oPoint = document.querySelector(".point");
         var oP = "";
         
@@ -111,6 +111,8 @@
             var nSec = timer.getSeconds();
 
             oSec.style.transform = "translate(-50%,-100%) rotate("+ nSec*6 +"deg)";
+            oMin.style.transform = "translate(-50%,-100%) rotate("+ nMin*6 +"deg)";
+            oHour.style.transform = "translate(-50%,-100%) rotate("+ nHour*30 + nMin/60*30 +"deg)";
 
 
 
