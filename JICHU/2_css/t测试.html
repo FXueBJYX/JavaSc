@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <style>
+        .div1{
+            height: 50px;
+            width: 150px;
+            background-color: #b5f;
+            /* position: relative; */
+            transition: all .5s ease;
+        }
+        .div2{
+            height: 0px;
+            width: 300px;
+            background-color: turquoise;
+            transition: all .1s ease;
+            /* display: none; */
+            /* overflow: hidden; */
+        }
+        .div1:hover .div2{
+            /* display: block; */
+            height: 100px;
+        }
+        .div1:hover{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+
+    </div>
+    <div class="div2">
+
+    </div>
+</body>
+</html>
