@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 如果放上面 -->
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 原生js     要等待所有资源加载完成再执行
+        // 如果不加window.onload就会报错
+        window.onload = function(){
+            var oDiv1 = document.querySelector("#div1");
+            console.log(oDiv1.innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        111
+    </div>
+
+    <!-- 在前面引入jquery   一定要放前面   -->
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#div1").css("background",'blue');
+
+
+        // 文档就绪函数  不等待资源加载  
+        // 全称$（document).ready(function(){    })
+        $(function () {
+            console.log(1111);
+        })
+
+    </script>
+</body>
+</html>
