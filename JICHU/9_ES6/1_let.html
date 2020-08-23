@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 函数
+
+        /*
+            相当于上一行有一个var a;
+            变量提升
+        */
+
+        // console.log(a);
+        // var a=2;
+
+        // let 1、没有变量提升
+        // 下面两行会报错
+        // console.log(a);
+        // let a;
+
+
+        // 2、不能重复声明
+        // let a=1;
+        // let a=2;
+        // console.log(a);
+
+        // 3、有块级作用域概念出了大括号就失效了
+        // var a=true;
+        // if(a){
+        //     let b=9;
+        // }
+        // console.log(b);
+
+        // var定义的，所有的i都是一个for循环是一瞬间执行完成的，
+        // i=0的时候settimeout还没到时候，100毫秒过去的时候
+        // i已经加到5了，所以输出的都是5
+
+        // 如果换成let，他有块级作用域概念，
+        // 一次循环是一个大括号也是一个块级作用域
+        // 就是5个i不会相互干扰，到时间就自己输出自己的值  0 1 2 3 4
+        for(var i=0;i<5;i++){
+            setTimeout(function(){
+                console.log(i);
+            },100)
+        }
+
+    </script>
+</body>
+</html>
