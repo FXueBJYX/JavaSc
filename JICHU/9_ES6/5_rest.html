@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arguments   函数内部输出所有函数的参数
+        // arguments.callee  输出所在的函数
+        function f1(){
+            console.log(arguments);
+            console.log(arguments.callee);
+        }
+        f1(1,2,3);
+
+
+        // rest   函数剩余的参数放到数组里
+        // 输出rest是只输出剩余参数组成的数组
+        function f2(x,...rest){
+            console.log(rest);
+        }
+        f2(4,5,6)
+    </script>
+</body>
+</html>

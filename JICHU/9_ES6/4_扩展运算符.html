@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        /*
+            扩展运算符 ...
+            1、合并数组
+            2、复制数组
+            3、将伪数组转化成数组（类数组：在script中dom获取到的html标签集合
+                合并的是对象的话，相同属性的后面覆盖前面，
+                不同属性直接加一起
+        */
+        let arr = [1,2,3];
+        let arr1 = [4,5,6];
+    //     // console.log(arr.concat(arr1));
+    //     console.log(...arr,...arr1);
+
+        let arr2 = [...arr];
+        // console.log(arr2);
+
+        var oLi = document.querySelectorAll("li");
+
+        console.log(oLi);
+        for(var i=0;i<oLi.length;i++){
+            console.log(oLi[i]);
+        }
+
+        let arr3=[...oLi];
+        console.log(arr3);
+
+
+        let obj1 = {
+            name:"aa",
+            age:12
+        }
+        let obj2 = {
+            name:"ss"
+        }
+        console.log({...obj1,...obj2});
+
+        
+    </script>
+</body>
+</html>
