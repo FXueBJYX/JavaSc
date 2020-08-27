@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    事件  定时器  对象 函数
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <!-- 事件  定时器  对象 函数 -->
+
+    <script>
+        var oLi = document.getElementsByTagName('li');
+        for( var i=0;i<oLi.length;i++){
+            oLi[i].onclick = function(){
+                console.log(this);
+            }
+        }
+    </script>
 </body>
 </html>
