@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+
+            /* 
+                vh vw    相对于视口 0-100 等份分
+                em       相对于自己或祖先的font-size  几em就是font-size的几倍
+                rem      相对于html，如果不自己给值，浏览器默认font-size 16px
+             */
+
+            background-color: aqua;
+            /* 定位方法 让元素距离上下左右都是0 */
+            /* position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; */
+            
+            /* vh vw 视口宽度  0-100等分   100是满铺 */
+            /* height: 50vh;
+            width: 50vw; */
+
+            /* em */
+            /* font-size: 10px; */
+            /* width: 10em;
+            height: 10em; */
+
+            /* rem 死死的相对于html的font-size 如果不自己设置html的，在下面设置没用 */
+            /* font-size: 20px; */
+            height: 10rem;
+            width: 20rem;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+</body>
+</html>
