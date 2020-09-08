@@ -26,37 +26,40 @@
                 <div class="nav1">
                     博肖
                     <span class="iconfont icon-sanjiaodown"></span>
-                    <div class="nav1-content">
-                        <ul>
-                            <li>关注</li>
-                            <li>好友圈</li>
-                            <li>悄悄关注</li>
-                            <li>我赞过</li>
-                            <li>我的收藏</li>
-                            <li>特别关注</li>
-                            <li>博君一肖</li>
-                            <li>博肖</li>
-                            <li>ggdd的新剧</li>
-                            <li>dd的综艺</li>
-                            <li>瓜友</li>
-                            <li>配音</li>
-                            <li>站姐们</li>
-                            <li>嗯，，</li>
-                            <li>AWM</li>
-                            <li>阿令</li>
-                            <li>黑大</li>
-                            <li>果果们</li>
-                            <li>明星</li>
-                            <li>芭芭</li>
-                            <li>111</li>
-                            <li>数据</li>
-                            <li>鹅</li>
-                            <li>娱乐明星</li>
-                            <li>新明日</li>
-                        </ul>
-                    </div>
+                    
                 </div>
-                <div class="nav1_">
+                <!-- 关注列表分组 -->
+                <div class="nav1-content">
+                    <ul>
+                        <li>关注</li>
+                        <li>好友圈</li>
+                        <li>悄悄关注</li>
+                        <li>我赞过</li>
+                        <li>我的收藏</li>
+                        <li>特别关注</li>
+                        <li>博君一肖</li>
+                        <li>博肖</li>
+                        <li>ggdd的新剧</li>
+                        <li>dd的综艺</li>
+                        <li>瓜友</li>
+                        <li>配音</li>
+                        <li>站姐们</li>
+                        <li>嗯，，</li>
+                        <li>AWM</li>
+                        <li>阿令</li>
+                        <li>黑大</li>
+                        <li>果果们</li>
+                        <li>明星</li>
+                        <li>芭芭</li>
+                        <li>111</li>
+                        <li>数据</li>
+                        <li>鹅</li>
+                        <li>娱乐明星</li>
+                        <li>新明日</li>
+                    </ul>
+                </div>
+                <!-- 默认分组 -->
+                <div class="nav2_">
                     <ul class="nav2">
                         <li>热门</li>
                         <li>榜单</li>
@@ -74,17 +77,48 @@
                     <div class="nav-plus">
                         <span class="iconfont icon-downarrow"></span>
                     </div>
-                    <div class=""></div>
                 </div>
-                
-                
+                <div class="nav2-content">
+                    <ul>
+                        <li>博肖</li>
+                        <li>热门</li>
+                        <li>榜单</li>
+                        <li>新鲜事</li>
+                        <li>同城</li>
+                        <li>热点</li>
+                        <li>科技</li>
+                        <li>明星</li>
+                        <li>电影</li>
+                        <li>音乐</li>
+                        <li>情感</li>
+                        <li>时尚</li>
+                        <li>美妆</li>
+                    </ul>
+                </div>
             </div>
-            
         </div>
 
         <div class="content">
 
         </div>
     </div>
+
+
+    <script>
+        var oNav1 = document.getElementsByClassName("nav1")[0];
+        var oNav1_con = document.querySelector(".nav1-content");
+
+        // var oNav2 = document.getElementsByClassName("nav-plus")[0];
+        // var oNav2_con = document.querySelector(".nav2-content");
+
+        oNav1.onclick = function(){
+            oNav1_con.style.diaplay = "block";
+        }
+
+        // oNav2.onclick = function(){
+        //     console.log("446");
+        //     oNav2_con.style.diaplay = "block";
+        // }
+    </script>
 </body>
 </html>
