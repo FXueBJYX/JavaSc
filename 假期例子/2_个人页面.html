@@ -4,8 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人中心</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+
+    <style>
+        @media (min-width: 768px){
+            html{
+                font-size: 20px;
+            }
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f2f2f2;
+        }
+        .mine{
+            position: relative;
+            /* padding: 3.25rem .9375rem 1.25rem; */
+        }
+        .box{
+            margin: 0 auto;
+            max-width: 750px;
+            background-color: #FFF;
+            /* overflow: hidden; */
+        }
+        .topbar{
+            position: relative;
+            line-height: 55px;
+            font-size: 20px;
+        }
+        .icon-biaoqing{
+            margin-left:.5rem ;
+            font-size: 2rem;
+        }
+        .span1{
+            position: absolute;
+            right: 1rem;
+            font-size: 1rem;
+        }
+        .img{
+            /* float: left; */
+            /* background-image: url("https://wx4.sinaimg.cn/orj480/006UIc8aly8ghxl1ixjpcj30ro0ro75l.jpg"); */
+            background-image: url("https://wx3.sinaimg.cn/orj480/006UIc8aly8gieuzfemztj30ro0rogpj.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 4rem;
+            /* padding-bottom: 1; */
+            height: 4rem;
+            border: 1px solid #FFF;
+            border-radius: 50%;
+            margin-left: 1rem;
+            margin-right: .9375rem;
+            display: inline-block;
+            
+        }
+        .mess{
+            /* float: left; */
+            display: inline-block;
+            /* height: 80px; */
+            line-height: 4rem;
+            position: absolute;
+            top: 0;
+            /* margin-left: 6.25px; */
+            font: inherit;
+            margin-top: .5em;
+            /* display: flex; */
+        }
+        .name{
+            font: inherit;
+            font-size: 26.25px;
+            margin: 0 0 7.5px;
+        }
+        .renzheng{
+            color: #999999;
+            font-size: .8125em;
+            /* font: inherit; */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box">
+        <div class="topbar">
+            <span class="iconfont icon-biaoqing"></span>
+            <span class="span1">设置</span>
+        </div>
+        <div class="mine">
+            <!-- <img src="https://wx4.sinaimg.cn/orj480/006UIc8aly8ghxl1ixjpcj30ro0ro75l.jpg" alt=""> -->
+            <div class="img"></div>
+            <div class="mess">
+                <h3 class="name">-不惜_</h3>
+                <h4 class="renzheng">微博认证：博君一肖超话粉丝大咖</h4>
+            </div>
+        </div>
+        <div class="number">
+            
+        </div>
+    </div>
 </body>
 </html>
+
