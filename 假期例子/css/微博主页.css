@@ -5,10 +5,16 @@
 li{
     list-style: none;
 }
+body{
+    background-color: #f1f1f1;
+
+}
 .box{
     max-width: 750px;
     margin:  auto;
     background-size: cover;
+    height: 3000px;
+    background-color: #FFF;
 
 }
 .head-nav{
@@ -34,6 +40,9 @@ li{
     }
     .head-nav{
         height: 105px;
+    }
+    .nav2-content{
+        width: 750px;
     }
 }
 .icon-wode{
@@ -108,7 +117,7 @@ li{
     border-top: 1px solid #f1f1f1;
 
     /* display: block; */
-    /* display: none; */
+    display: none;
 }
 .nav1-content ul{
     position: absolute;
@@ -175,8 +184,9 @@ li{
     top: 2.55rem;
     /* left: -1rem; */
     height: 280.1px;
-    width: 37.48rem;
-    margin: 0 auto;
+    /* width: 37.48rem; */
+    width: 100%;
+    /* margin: 0 auto; */
     background-color: #fafafa;
     border-top: 1px solid #f1f1f1;
 
@@ -201,4 +211,54 @@ li{
     line-height: 2.215rem;
     font-size: .875rem;
     border-radius: 6%;
+}
+
+.weibo-item{
+    height: 455.16px;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0 .75rem;
+    position: relative;
+
+
+}
+.weibo-card{
+    display: inline;
+    /* padding-left: .25rem; */
+    /* padding-top: .9375rem; */
+    max-width: 750px;
+    position: relative;
+
+    left: .25rem;
+    right: .25rem;
+    top: .9375rem;
+
+}
+.weibo-card .h-img{
+    background-image: url("https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/ed5ee633ly8ghyr8m136yj20u00u0my7.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    /* display: block; */
+
+}
+.weibo-card .vip{
+    height: 1em;
+    width: 1em;
+    font-size: 11.9px;
+    border: 1px solid yellow;
+    border-radius: 50%;
+    background-color: rgb(219, 0, 0);
+    color: #fff34f;
+    text-align: center;
+    line-height: 1em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.weibo-card .w-mess{
+    /* display: inline; */
+    position: absolute;
+    left: 3rem;
 }
