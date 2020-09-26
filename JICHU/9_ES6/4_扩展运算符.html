@@ -17,14 +17,14 @@
             扩展运算符 ...
             1、合并数组
             2、复制数组
-            3、将伪数组转化成数组（类数组：在script中dom获取到的html标签集合
+            3、将类数组转化成数组（类数组：在script中dom获取到的html标签集合
                 合并的是对象的话，相同属性的后面覆盖前面，
                 不同属性直接加一起
         */
         let arr = [1,2,3];
         let arr1 = [4,5,6];
-    //     // console.log(arr.concat(arr1));
-    //     console.log(...arr,...arr1);
+        console.log(arr.concat(arr1));
+        console.log(...arr,...arr1);
 
         let arr2 = [...arr];
         // console.log(arr2);
@@ -37,6 +37,7 @@
         }
 
         let arr3=[...oLi];
+        //转换成真数组
         console.log(arr3);
 
 

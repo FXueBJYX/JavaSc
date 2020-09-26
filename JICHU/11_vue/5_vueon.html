@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+        }
+        #div2{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        v-on:click  绑定事件     简写：@click 
+        所有的简写都是    v-on 可以写成 @
+    -->
+    <div id="app">
+        <h2>{{count}}</h2>
+        <!-- 绑定add方法 -->
+        <button v-on:click="add(3)">push</button>
+        <button v-on:click="add(5)">push</button>
+        <!-- 简写版 -->
+        <button @click="add(3)">push</button>
+
+
+        <div id="div1" @click="f1()">
+            <!-- 事件修饰符 加上.stop之后点div1就不会出现div2的输出结果-->
+            <div id="div2" @click.stop="f2()"></div>
+        </div>
+
+        <!-- 阻止默认行为 阻止点击链接后的跳转页面的行为   -->
+        <a href="http://www.baidu.com" @click.prevent="f3()">百度</a>
+
+        <!-- 键盘抬起 -->
+        <!-- <input type="text" v-on:keyup="f4()"> -->
+        <!-- 指定按键   回车键 -->
+        <input type="text" @keyup.enter="f4()">
+
+        <!-- 会输出前面的div5字符串文本 和后面的对象 -->
+        <div @click="f5('div555',$event)">div55555</div>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                count:0
+            },
+            methods:{
+                add(num){
+                    this.count+=num;
+                },
+                f1(){
+                    console.log("div111111111");
+                },
+                f2(){
+                    console.log("div2222222222");
+                },
+                f3(){
+                    console.log("baiduuuuu");
+                },
+                f4(){
+                    // 后面是输出输入条中的内容
+                    console.log("keyup",event.target.value);
+                },
+                f5(val,event){
+                    console.log(val,event);
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3 v-if="isLogin">hellp</h3>
+        <h3 v-else> login</h3>
+
+        <button @click="change">click</button>
+
+        <p v-if="x == 'a'">A</p>
+        <p v-else-if="x == 'b'">B</p>
+        <p v-else-if="x == 'c'">C</p>
+
+
+        <span v-show="isShow">151515</span>
+
+    </div>
+    <script src="vue.js"></script>
+    <script >
+        new Vue({
+            el:"#app",
+            data:{
+                isLogin:false,
+                x:"a",
+                isShow:true
+            },
+            methods:{
+                change(){
+                    // this.isLogin="true"
+                    this.x="b"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

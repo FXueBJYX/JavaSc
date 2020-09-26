@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <button @click="fn"></button>
+        <ul>
+            <!-- 循环 obj取元素 -->
+            <li v-for="obj in arr">{{obj}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                // 数组
+                arr:['li1','li2','li3']
+            },
+            methods:{
+                fn(){
+                    // 点击  arr添加li4
+                    this.arr.push('li4');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

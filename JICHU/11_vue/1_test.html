@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1 @click="fn">
+            <!-- {{}}   文本插值-->
+            {{msg}}
+        </h1>
+    </div>
+
+
+    <!-- 先连文件 -->
+    <script src="vue.js"></script>
+    <script>
+        let vn = new Vue({
+            // 挂载
+            el: "#box",
+            // 数据
+            data: {
+                msg:"hello"
+            },
+            // 方法
+            methods: {
+                fn(){
+                    this.msg="ewvsv";
+                }
+            }
+                
+        })
+
+        // $：固定的vue里取el,data,methods的
+        console.log(vn.$data.msg);
+    </script>
+</body>
+</html>
