@@ -4,11 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #div1{
+            background-color: blue;
+        }
+        #div{
+            color: blue;
+
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            color: blue;
+        }
+        .yellow{
+            color: yellow;
+        }
+    </style>
 </head>
 <body>
-    <!-- 动态绑定  bind -->
+    <!-- 
+        动态绑定  bind 
+        v-bind  后面加要绑定的东西
+
+        简写  :
+
+    -->
     <div id="box">
-        <div v-bind:>一个东西</div>
+        <div v-bind:id="myID">一个东西</div>
+
+        <div class="red blue">二个东西</div>
+        <!-- 动态绑定 class{class名:true或false} -->
+        <!-- <h2 v-bind:class="{red:false,blue:true}">三个东西</h2> -->
+        <!-- 写死在这的 -->
+        <h2 :class="{red:false,blue:true} ">三个东西</h2>
+        <!-- 可以在vue里改的 只有显示或不显示  点击改样式-->
+        <h2 :class="{red:isRed,blue:isBlue}" @click='tog'>四个东西</h2>
+        <!-- 可以在vue自己改类 -->
+        <div :class="[a,b]">11111</div>
+
+
+        <div style="height: 100px;  width: 100px; background-color: violet; ">2222</div>
+        <!-- vue里改style -->
+        <div :style="styleObj">333333</div>
+
+
     </div>
     
     <script src="vue.js"></script>
@@ -16,9 +57,23 @@
         new Vue({
             el:"#box",
             data:{
-
+                myID:"div1",
+                // myID:"div",
+                isRed:true,
+                isBlue:true,
+                a:"red",
+                b:"yellow",
+                styleObj:{
+                    width:"100px",
+                    height:"100px",
+                    background:"purple"
+                }
             },
             methods:{
+                tog(){
+                    this.isBlue = !this.isBlue;
+                    this.isRed = !this.isRed;
+                }
 
             }
         })
