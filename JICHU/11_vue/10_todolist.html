@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .right{
+            float: right;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>todolist</h2>
+        <hr/>
+        <div>
+            名称：<input type="text" v-model="name">
+            价格：<input type="text" v-model="price">
+            <button @click="add">添加</button>
+            <input type="text">
+            <button>搜索</button>
+        </div>
+        <ul>
+            <li v-for="(obj,index) in list" :class="{red:obj.isRed}" @click="change(obj)" :key="obj.name">
+                <input type="checkbox" v-model="obj.isRed">
+                <span>{{obj.name}}</span>
+                <span >{{obj.price}}</span>
+                <span @click="del(index)" class="right">[X]</span>
+                
+            </li>
+        </ul>
+        <div>
+            <button @click="delAll()">删除选中</button>
+            总价66
+
+        </div>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                list:[
+                    {name:"苹果",price:6,isRed:false},
+                    {name:"香蕉",price:5.9,isRed:false},
+
+                ],
+                neme:"",
+                price:""
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.name,price:this.price,isRed:false})
+                    this.name="",
+                    this.price=""
+                },
+                change(obj){
+                    obj.isRed = !obj.isRed;
+                },
+                del(index){
+                    this.list.splice(index,1);
+                },
+                delAll(){
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

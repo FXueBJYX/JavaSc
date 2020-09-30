@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
+    
     <div id="box">
-        <input type="text">
-        <button>添加</button>
-
+        <input type="text" v-model="inname">
+        <button v-on:click="add()">添加</button>
         <ul>
-            <li> 
-                <button>del</button>     
+            <!-- 要有一个唯一的key不然会冒泡     或者下面删除按钮的click加上 .stop -->
+            <li v-for="(obj,index) in list" :key="obj.name" :class="{red:obj.isRed}" @click="change(obj)">
+                {{obj.name}}
+                <button @click="del(index)">del</button>
             </li>
         </ul>
-
 
     </div>
     <script src="vue.js"></script>
@@ -23,13 +29,86 @@
         new Vue({
             el:"#box",
             data:{
-
+                list:[
+                    {name:"香蕉",isRed:false},
+                    {name:"苹果",isRed:false}
+                ],
+                inname:""
             },
-            methods{
+            methods:{
+                add(){
 
+                    this.list.push({name:this.inname,isRed:false});
+                    this.inname=""
+                },
+                change(obj){
+                    obj.isRed = !obj.isRed;
+                },
+                del(index){
+                    this.list.splice(index,1);
+                }
             }
+            
 
         })
     </script>
+
+
+
+    <!-- <div id="box">
+        <input type="text" v-model="iname">
+        <button @click="add">添加</button>
+        <ul>
+            <li v-for="obj in list" @click="change(obj)" :class="{red:obj.isRed}">
+                {{obj.name}}
+                <button>del</button>
+            </li>
+            
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                list:[
+                    {name:"西瓜",isRed:false},
+                    {name:"排骨",isRed:false}
+                ],
+                iname:""
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.iname,isRed:false});
+                    this.iname=""
+                },
+                change(obj){
+                    obj.isRed = !obj.isRed;
+                }
+
+            }
+        })
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
