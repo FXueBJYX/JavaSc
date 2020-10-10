@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <button @click="click">click</button>
+        <h5>{{fName}}</h5>
+        <h5>{{lName}}</h5>
+        <h5>{{fullName}}</h5>
+        <h5>{{fullName}}</h5>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#div1",
+            data:{
+                fName:"zhang",
+                lName:"san"
+            },
+            computed:{
+
+                // 只读
+                // fullName(){
+                //     return this.fName + this.lName
+                // }
+                fullName:{
+                    get(){
+                        return this.fName +" "+ this.lName
+                    },
+                    set(newValue){
+                        console.log(newValue)
+                        let val = newValue.split(" ")
+                        this.fName = val[0]
+                        this.lName = val[1]
+                    }
+                }
+            },
+            methods:{
+                click(){
+                    // this.fullName="li si";
+                    this.fullName.newValue="li si";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

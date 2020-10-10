@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <button @click="change">click</button>
+        <h1>{{msg}}</h1>
+        <!-- 字符串转成数组 split-->
+        <!-- 反转    reverse -->
+        <!-- 数组转字符串   join -->
+        <!-- <h1>反转后:{{msg.split(" ").reverse().join(" ")}}</h1> -->
+
+        <!-- 封装函数 -->
+        <h1>反转后 {{reverseStr(msg)}}</h1>
+
+        <!-- 
+            不加参数
+            只计算一次 msg变才变
+            就是比如计算 3个1+1 用属性就是只算一次，如果用方法就得算3次 
+        -->
+        
+        <h4>{{reverseMsg}}</h4>
+        <h4>{{reverseMsg}}</h4>
+        <h4>{{reverseMsg}}</h4>
+        <h4>{{reverseMsg}}</h4>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#div1",
+            data:{
+                msg:"hello world"
+            },
+            methods:{
+                reverseStr(msg){
+                    return msg.split(" ").reverse().join(" ")
+                },
+                change(){
+                    this.msg="lalalalal"
+                }
+
+            },
+            // 计算属性
+            computed:{
+                // 属性  不是函数
+                reverseMsg(){
+                    return this.msg.split(" ").reverse().join(" ")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
