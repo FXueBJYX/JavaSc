@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import test from '../views/test'
 import A from '../views/A'
 import B from '../views/B'
+import Vuex from '../views/Vuex'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,10 @@ const routes = [
     // 定向页面  直接到home下的A
     path:'/',
     redirect:'/home/A'
+  },
+  {
+    path:'/Vuex',
+    component:Vuex
   }
 ]
 
