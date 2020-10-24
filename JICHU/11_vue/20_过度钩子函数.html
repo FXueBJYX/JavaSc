@@ -15,8 +15,13 @@
 </head>
 <body>
     <div id="div1">
-        <button @click="change">click</button>
-        <transition v-on="">
+        <button @click="change()">click</button>
+        <!-- 给谁做动画就把谁放transition里面 -->
+        <!-- 三个钩子函数 -->
+        <transition 
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:after-enter="afterEnter">
             <div class="ball" v-if="isShow"></div>
             
         </transition>
@@ -30,8 +35,25 @@
             },
             methods:{
                 change(){
-                    this.isShow = !this.isShow
+                    this.isShow = true;
+                },
+                beforeEnter(el){
+                    console.log(1);
+                    el.style.transform="translate(0,0)"
+                },
+                enter(el,done){
+                    console.log(2);
+                    el.offsetWidth;
+                    el.style.transform="translate(150px,300px)"
+                    el.style.transition = "all 2s ease"
+                    // 必须用done回调
+                    done();
+                },
+                afterEnter(){
+                    console.log(3);
+                    this.isShow= false;
                 }
+                
             }
         })
     </script>

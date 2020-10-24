@@ -59,6 +59,7 @@
 <body>
     <div id="div1">
         <button @click="change">click</button>
+        <!-- 给谁做动画就把谁放transition里面 -->
         <transition name="fade">
             <h1 v-if="isShow" class="h11">lalala</h1>
         </transition>
