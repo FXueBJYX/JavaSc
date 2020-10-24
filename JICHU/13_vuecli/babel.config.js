@@ -3,3 +3,6 @@ module.exports = {
     '@vue/cli-plugin-babel/preset'
   ]
 }
+
+
+// es6转成es5
