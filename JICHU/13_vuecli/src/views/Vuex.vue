@@ -8,18 +8,26 @@
         <!-- $store.commit触发mutations里的方法 -->
         <button @click="$store.commit('add',5)">++</button>
         <button @click=add(5)>++</button>
+        <h3>{{$store.getters.sum}}</h3>
+
+        {{sum}}
     </div>
 </template>
 
 <script>
-import{ mapState,mapMutations}from "vuex"
+import{ mapState,mapMutations,mapGetters}from "vuex"
+import axios from 'axios'
 
     export default {
         computed:{
-            ...mapState(['count'])
+            ...mapState(['count']),
+            ...mapGetters(['sum'])
         },
         methods:{
             ...mapMutations(['add'])
+        },
+        created(){
+            this.$store.dispatch('getMovielist')
         }
         
         

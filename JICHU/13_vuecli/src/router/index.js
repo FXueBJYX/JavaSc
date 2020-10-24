@@ -6,6 +6,7 @@ import A from '../views/A'
 import B from '../views/B'
 import Vuex from '../views/Vuex'
 
+
 Vue.use(VueRouter)
 
 const routes = [
