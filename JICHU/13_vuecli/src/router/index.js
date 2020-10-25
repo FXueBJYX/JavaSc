@@ -27,11 +27,11 @@ const routes = [
     name:'test',
     component:test
   },
-  {
-    // 定向页面  直接到home下的A
-    path:'/',
-    redirect:'/home/A'
-  },
+  // {
+  //   // 定向页面  直接到home下的A
+  //   path:'/',
+  //   redirect:'/home/A'
+  // },
   {
     path:'/Vuex',
     component:Vuex
