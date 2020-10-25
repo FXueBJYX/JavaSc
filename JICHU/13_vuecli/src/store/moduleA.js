@@ -1,50 +1,49 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 
 
+const user =
+{
+    namespaced: true,
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-    namespace:true,
-  
-  // 存储状态
-  state: {
-      list:[
+    // 存储状态
+    state: {
+        list: [
             {
-                name:'zs'
+                name: 'zs'
             },
             {
-                name:'ls'
+                name: 'ls'
             },
             {
-                name:'ww'
+                name: 'ww'
             },
-      ]
-   
-  },
-  // 修改状态的唯一方式
-  // 在这里写方法
-  mutations: {
-      add(state){
-          state.list.push({name:'zl'})
-      }
-    
-  },
-  // 相当于计算属性
-  getters:{
-    
+        ]
 
-  },
+    },
+    // 修改状态的唯一方式
+    // 在这里写方法
+    mutations: {
+        add(state) {
+            state.list.push({ name: 'zl' })
+        }
+
+    },
+    // 相当于计算属性
+    getters: {
+
+
+    },
 
     // 类似于mutation  但是不是直接更改状态
     // 修改状态要调用mutation里的函数
     // 异步请求
-  actions: {
-    
-  },
-  // 模块
-  modules: {
+    actions: {
 
-  }
-})
+    },
+    // 模块
+    modules: {
+
+    }
+}
+
+// 导出
+export default user
