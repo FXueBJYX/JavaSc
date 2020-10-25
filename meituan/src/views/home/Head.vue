@@ -24,6 +24,7 @@
             border-radius: 0.3rem;
             text-indent: 20px;
             margin: 0.2rem 0;
+            outline: none;
         }
     }
 
