@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
     .cate-box{
         display: flex;
-        flex-wrap: wrap;;
+        flex-wrap: wrap;
     }
     .cate{
         
