@@ -1,7 +1,9 @@
 <template>
     <div>
         <ul class="list-box">
-            <li class="list" v-for="obj in list" :key="obj.id">
+            <li class="list" v-for="obj in list" :key="obj.id"
+                @click="$router.push({path:'/detail',query:{id:obj.id}})"
+            >
                 <img :src="obj.img" alt="">
                 <div class="list-info">
                     <h2>{{obj.name}}</h2>
@@ -18,6 +20,7 @@
                 </div>    
             </li>
         </ul>
+        <img class="loading" v-show="isShow" src="@/assets/images/loading.gif" alt="">
     </div>
 </template>
 
@@ -28,7 +31,9 @@
         data(){
                 return {
                     list:[],
-                    pageNum:0
+                    pageNum:0,
+                    isShow:true,  //判断loading是否显示  true显示|false隐藏
+                    isFinished:false
                 } 
         },
         components:{
@@ -45,6 +50,11 @@
                         // 原来的和后加的连一起
                         this.pageNum++;
                         this.list=[...this.list,...res.data.data.list];
+                        this.isShow = false; //loading隐藏
+                        // 判断是不是请求完了
+                        if(this.list.length == res.data.data.total){
+                            this.isFinished = true
+                        }
                     }
 
                 }).catch((error)=>{
@@ -65,8 +75,10 @@
                 // 整个页面高度
                 let scrollHeight=document.documentElement.scrollHeight;
 
-                // console.log(scrollTop,clientHeight,scrollHeight)
-                if(scrollTop+clientHeight>scrollHeight){
+                console.log(scrollTop,clientHeight,scrollHeight)
+                if( (Math.ceil(scrollTop) + clientHeight) == scrollHeight){
+                // if( (scrollTop + clientHeight) == scrollHeight){
+                    this.isShow = true; //loading
                     this.getData();
                 }
             }
@@ -86,16 +98,22 @@
             .list-info{
                 align-content: space-between;
                 flex: 1;
-                //margin-left: 0.25rem;
+                margin-left: 0.25rem;
                 .list-con{
                     font-size: 12px;
                     color: #333;
-                    Star{
-                        display: inline;
-                    }
+                    
                     
                 }
             }
         }
+    }
+    .loading{
+        position: fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width:1.4rem;
+        height:1.4rem;
     }
 </style>

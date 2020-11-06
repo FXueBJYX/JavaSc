@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 ul {
-    display: inline;
+    // display: flex;
     li {
         display: inline-block;
         width: 12px;
