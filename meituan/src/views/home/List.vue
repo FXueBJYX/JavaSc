@@ -1,6 +1,7 @@
 <template>
     <div>
         <ul class="list-box">
+            <!-- <h3 class="">附近商家</h3> -->
             <li class="list" v-for="obj in list" :key="obj.id"
                 @click="$router.push({path:'/detail',query:{id:obj.id}})"
             >

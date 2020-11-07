@@ -2,20 +2,25 @@
     <div class="container">
         <div class="back" @click="$router.go(-1)">&lt;</div>
         <div class="store-info">
-            <img class="store-img" src="http://admin.gxxmglzx.com/tender/upload/test/store4.png" alt="">
+            <!-- <img class="store-img" src="http://admin.gxxmglzx.com/tender/upload/test/store4.png" alt=""> -->
+            <img class="store-img" :src="list.img" alt="">
+            
             <div class="store-msg">
                 <div class="detail">
-                1，由于奶盖为鲜奶打制，配送中奶盖可能会出现下沉和茶混的现象，如对口感有特别要求的顾客请选择奶盖分装；
-                2，需要发票的顾客请直接扫门店小票的二维码开电子发票，外卖开票仅包含商品金额，望周知谅解！
+                <!-- 1，由于奶盖为鲜奶打制，配送中奶盖可能会出现下沉和茶混的现象，如对口感有特别要求的顾客请选择奶盖分装；
+                2，需要发票的顾客请直接扫门店小票的二维码开电子发票，外卖开票仅包含商品金额，望周知谅解！ -->
+                    {{list.notice}}
                 </div>
             </div>
         </div>
+        <!-- {{$route.query.id}} -->
     </div>
 </template>
 
 <script>
+import axios from 'axios'
     export default {
-    
+        props:["list"]
     }
 </script>
 

@@ -30,7 +30,7 @@ export default {
     // 父组件传子组件
     props: {
         num: {
-            type: Number,
+            // type: Number,
             default: 5
         }
     }
