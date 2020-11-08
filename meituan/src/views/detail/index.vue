@@ -4,8 +4,8 @@
         <DetailHead :list="list"></DetailHead>
         <!-- tab切换 -->
         <van-tabs v-model="active" animated>
-            <van-tab :title="'点餐'" >点餐页</van-tab>
-            <van-tab :title="'评论'" >
+            <van-tab :title="'点菜'" >点餐页</van-tab>
+            <van-tab :title="'评价'" >
                 <Comment></Comment>
             </van-tab>
             <van-tab :title="'商家'" >
@@ -21,7 +21,7 @@
 import DetailHead from "./DetailHead";
 import Comment from "../comment/index";
 import axios from 'axios';
-import Merchant from '../merchant/Merchant'
+import Merchant from '../merchant/index'
     export default {
         data(){
             return {

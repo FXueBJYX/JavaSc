@@ -66,7 +66,7 @@
                 border: 1px solid rgb(197, 197, 197);
                 border-radius: 0.28rem;
                 margin-right: 0.2rem;
-                margin-bottom: 0.25rem;
+                margin-bottom: 0.15rem;
                 color: #666;
             }
             .active{
@@ -92,10 +92,11 @@
                 .list-info{
                     color: #2f2f2f;
                     .name{
-                        font-size: 0.4rem;
+                        font-size: 0.32rem;
                         margin-bottom: 0.15rem;
                     }
                     .desc{
+                        // font-size: 0.28rem;
                         line-height: 0.45rem;
                     }
                 }

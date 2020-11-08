@@ -17,7 +17,9 @@ import commentList from './CommentList'
     export default {
         data(){
             return {
+                // 改接口那的id
                 id:this.$route.query.id,
+                // 往子组件传值
                 list:{}
             }
         },
@@ -26,8 +28,9 @@ import commentList from './CommentList'
             commentList
         },
         methods:{
-            fn(id){
-                this.getData(id);
+            // 子组件给自己传的
+            fn(typeid){
+                this.getData(typeid);
             },
             getData(typeid){
                 axios.get(`http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=${typeid}`)

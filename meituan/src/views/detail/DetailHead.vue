@@ -20,6 +20,7 @@
 <script>
 import axios from 'axios'
     export default {
+        // 从父组件接到list
         props:["list"]
     }
 </script>

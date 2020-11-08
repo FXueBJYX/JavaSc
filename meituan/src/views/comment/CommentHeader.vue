@@ -5,14 +5,22 @@
             <div>商家评价</div>
         </div>
         <div class="score">
-            <div class="kou">口味 
-                <Star :num="list.flavor"></Star>
-                {{list.flavor}}分
+            <div id="score-kou">
+                <div id="kou">口味</div> 
+                <div class="kou"> 
+                    <Star :num="list.flavor"></Star>
+                    {{list.flavor}}分
+                </div>
             </div>
-            <div class="bao">包装 
-                <Star :num="list.packing"></Star>
-                {{list.packing}}分
+            
+            <div id="score-bao">
+                <div id="bao">包装</div> 
+                <div class="bao"> 
+                    <Star :num="list.packing"></Star>
+                    {{list.packing}}分
+                </div>
             </div>
+            
         </div>
         <div class="send-score">
             <div class="num">{{list.score}}</div>
@@ -38,36 +46,44 @@ import Star from "@/components/Star"
         padding: 0.3rem;
         font-size: 0.28rem;
         .store-score,.send-score{
-            width: 1.86rem;
-            font-size: 0.3rem;
+            width: 1.46rem;
+            font-size: 12px;
             text-align: center;
             .num{
                 font-size: 0.54rem;
                 line-height: 0.54rem ;
-                font-weight: bold;
+                // font-weight: bold;
+
             }
         }
         .store-score{
             .num{
-                
                 color: #ffb000;
             }
         }
         .send-score{
             .num{
-                
                 color: #999;
             }
         }
         .score{
             flex: 1;
             color: #666;
-            .kou{
+            #score-kou,#score-bao{
                 display: flex;
-                margin-bottom: 0.25rem;
             }
-            .bao{
-               display: flex; 
+            #kou,#bao,.kou,.bao{
+                display: inline-block;
+            }
+            .kou{
+                margin-bottom: 0.25rem;
+                
+            }
+            .kou,.bao{
+                display: flex; 
+                color: #ffb000;
+                margin-left: 0.2rem;
+                font-size: 13px;
             }
         }
 
