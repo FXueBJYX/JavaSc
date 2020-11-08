@@ -32,7 +32,7 @@ import commentList from './CommentList'
             getData(typeid){
                 axios.get(`http://admin.gxxmglzx.com/tender/test/get_info?id=${this.id}&type=${typeid}`)
                 .then((res)=>{
-                    console.log(res.data.data);
+                    // console.log(res.data.data);
                     this.list=res.data.data;
                 }).catch((err)=>{
                     console.log(err);

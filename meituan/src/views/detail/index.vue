@@ -8,7 +8,9 @@
             <van-tab :title="'评论'" >
                 <Comment></Comment>
             </van-tab>
-            <van-tab :title="'商家'" >商家页</van-tab>
+            <van-tab :title="'商家'" >
+                <Merchant :list="list"></Merchant>
+            </van-tab>
         </van-tabs>
         <!-- 向父组件传id -->
         <!-- {{$route.query.id}} -->
@@ -18,7 +20,8 @@
 <script>
 import DetailHead from "./DetailHead";
 import Comment from "../comment/index";
-import axios from 'axios'
+import axios from 'axios';
+import Merchant from '../merchant/Merchant'
     export default {
         data(){
             return {
@@ -29,12 +32,13 @@ import axios from 'axios'
         },
         components: {
             DetailHead,
-            Comment
+            Comment,
+            Merchant
         },
         created(){
             axios.get(`http://admin.gxxmglzx.com/tender/test/get_store_id?id=${this.id}`)
             .then((res)=>{
-                // console.log(res.data);
+                console.log(res.data.data);
 
                 this.list=res.data.data
             }).catch((err)=>{

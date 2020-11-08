@@ -44,7 +44,7 @@
             getData(){
                 axios.get("http://admin.gxxmglzx.com/tender/test/get_store?current="+this.pageNum+"&size=10")
                 .then((res)=>{
-                    console.log(res.data.data);
+                    // console.log(res.data.data);
                     if(res.data.errcode==200)
                     {
                         // this.list=res.data.data.list;

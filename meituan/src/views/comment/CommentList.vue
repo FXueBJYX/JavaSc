@@ -57,15 +57,16 @@
         padding: 0.2rem;
         border-top: 0.2rem solid #f4f4f4;
         .type-box{
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.2rem;
             font-size: 0.26rem;
+            margin-left: 0.18rem;
             div {
                 display: inline-block;
                 padding: 0.1rem 0.24rem;
                 border: 1px solid rgb(197, 197, 197);
                 border-radius: 0.28rem;
                 margin-right: 0.2rem;
-                margin-bottom: 0.1rem;
+                margin-bottom: 0.25rem;
                 color: #666;
             }
             .active{
@@ -76,13 +77,27 @@
         }
         .list-box {
             .list {
-                margin-bottom: 0.25rem;
+                padding-bottom: 0.25rem;
+                // margin-bottom: 0.25rem;
+                margin-left: 0.18rem;
                 display: flex;
+                border-top: solid #f4f4f4 0.02rem;
+                padding-top: 0.25rem;
                 .list-img {
                     width: 0.8rem;
                     height: 0.8rem;
                     border-radius: 50%;
                     margin-right: 0.25rem;
+                }
+                .list-info{
+                    color: #2f2f2f;
+                    .name{
+                        font-size: 0.4rem;
+                        margin-bottom: 0.15rem;
+                    }
+                    .desc{
+                        line-height: 0.45rem;
+                    }
                 }
             }
         }
