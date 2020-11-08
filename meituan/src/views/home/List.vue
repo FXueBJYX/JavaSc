@@ -91,7 +91,7 @@
     .list-box{
         margin: 0.1rem 0.25rem;
         .list{
-            margin:0.8rem 0 ;
+            margin:0.5rem 0 ;
             display: flex;
             img{
                 width: 1.73rem;
