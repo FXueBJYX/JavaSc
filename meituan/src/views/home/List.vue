@@ -76,7 +76,7 @@
                 // 整个页面高度
                 let scrollHeight=document.documentElement.scrollHeight;
 
-                console.log(scrollTop,clientHeight,scrollHeight)
+                // console.log(scrollTop,clientHeight,scrollHeight)
                 if( (Math.ceil(scrollTop) + clientHeight) == scrollHeight){
                 // if( (scrollTop + clientHeight) == scrollHeight){
                     this.isShow = true; //loading

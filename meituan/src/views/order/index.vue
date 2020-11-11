@@ -25,14 +25,14 @@ import axios from 'axios'
     export default {
         data(){
             return{
-                gooos:[],
+                goods:[],
                 nav:[]
             }
         },
         created(){
             axios.get(`http://admin.gxxmglzx.com/tender/test/get_nav?id=${this.$route.query.id}`)
             .then((res)=>{
-                console.log(res.data.data);
+                // console.log(res.data.data);
                 this.goods=res.data.data.goods;
                 this.nav=res.data.data.nav;
             }).catch((err)=>{
@@ -45,11 +45,13 @@ import axios from 'axios'
 <style lang="scss" scoped>
     .order-con {
         display: flex;
+        font-size: 0.24rem;
         .cate-box {
             flex: 1;
             li {
                 padding: 0.18rem 0.24rem 0.44rem;
                 background: #f5f5f5;
+                
             }
         }
         .pro-box {
