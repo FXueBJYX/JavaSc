@@ -1,18 +1,23 @@
 <template>
-    <div>
-        <!-- 评价页88888 -->
-        <CommentHeader :list="list"></CommentHeader>
+    <div class="content">
+        <div>
+            <!-- 评价页88888 -->
+            <CommentHeader :list="list"></CommentHeader>
 
-        <comment-List :list="list" @update="fn"></comment-List>
-        
+            <comment-List :list="list" @update="fn"></comment-List>
+            
 
+        </div>
     </div>
+    
 </template>
 
 <script>
 import axios from 'axios'
 import CommentHeader from "./CommentHeader"
 import commentList from './CommentList'
+import BetterScroll from "better-scroll";
+
 
     export default {
         data(){
@@ -37,6 +42,14 @@ import commentList from './CommentList'
                 .then((res)=>{
                     // console.log(res.data.data);
                     this.list=res.data.data;
+
+                    this.$nextTick(() => {
+                    this.cateScroll = new BetterScroll(".content", {
+                        click: true,
+                        bounce: false
+                    });
+                   
+                });
                 }).catch((err)=>{
                     console.log(err);
                 })
@@ -50,5 +63,7 @@ import commentList from './CommentList'
 </script>
 
 <style lang="scss" scoped>
-    
+    .content{
+        height: calc(100vh - 44px);
+    }
 </style>

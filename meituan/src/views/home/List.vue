@@ -1,5 +1,8 @@
 <template>
     <div>
+        
+        <img class="loading" v-show="isShow" src="@/assets/images/loading.gif" alt="">
+    
         <ul class="list-box">
             <!-- <h3 class="">附近商家</h3> -->
             <li class="list" v-for="obj in list" :key="obj.id"
@@ -21,7 +24,6 @@
                 </div>    
             </li>
         </ul>
-        <img class="loading" v-show="isShow" src="@/assets/images/loading.gif" alt="">
     </div>
 </template>
 

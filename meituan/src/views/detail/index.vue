@@ -4,8 +4,8 @@
             <!-- 详情页 -->
             <DetailHead :list="list"></DetailHead>
             <!-- tab切换 -->
-            <!-- 吸顶 sticky -->
-            <van-tabs v-model="active" animated  color="#ffb000">
+            <!-- 吸顶  -->
+            <van-tabs v-model="active" animated sticky color="#ffb000" line-width="20px" line-height="2px">
                 <van-tab :title="'点菜'" >
                     <Order></Order>
                 </van-tab>
@@ -58,11 +58,19 @@ import BetterScroll from 'better-scroll'
         },
         mounted(){
             // 异步请求数据  要有个延时
+            // 滚动条隐藏
             setTimeout(() => {     
                 let bs = new BetterScroll('.bs-wrapper', {
-                    click:true
-                })
+                    click: true,
+                    bounce: false
+                });
             }, 1000);
+            // this.$nextTick(()=>{
+            //     let bs = new BetterScroll('.bs-wrapper', {
+            //         click: true,
+            //         bounce: false
+            //     })
+            // })
             
         }
     }
@@ -72,5 +80,6 @@ import BetterScroll from 'better-scroll'
     .bs-wrapper{
         height: 100vh;
         overflow: hidden;
+        
     }
 </style>

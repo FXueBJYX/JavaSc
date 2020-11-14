@@ -1,8 +1,8 @@
 <template>
-    <div  >
+    <div  class="box">
         <div class="addsafe">
             <div class="add">{{list.address}}</div>
-            <div class="safe"></div>
+            <div class="safe">查看食品安全档案</div>
         </div>
         <div class="peisong">
             <div class="mode">配送服务：{{list.server}}</div>
@@ -13,7 +13,7 @@
                 {{list.notice}}    
             </div>
             <div class="full">
-                {{list.full}}
+                <div>{{list.full}}</div>
                 {{list.sales}}
             </div>
         </div>
@@ -29,16 +29,40 @@
 </script>
 
 <style lang="scss" scoped>
-    .addsafe{
-        color: #999;
-        margin-bottom: 0.5rem;
-    }
-    .peisong{
-        margin-bottom: 0.5rem;
+    .box{
+        margin-left: 0.4rem;
+        .addsafe{
+            color: #333;
+            margin-bottom: 0.5rem;
+            .add{
+                font-family: mtsi-font;
+                margin-bottom: 0.2rem;
+            }
+            
+        }
+        .peisong{
+            margin-bottom: 0.5rem;
+            .time{
+                font-family: mtsi-font;
+            }
 
-    }
-    .detail{
-        margin-bottom: 0.5rem;
+        }
+        .detail{
+            margin-bottom: 0.5rem;
+            // width:0; /*不受子元素宽度撑大*/
+            .notice{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-bottom: 0.2rem;
 
+            }
+            .full{
+                font-family: mtsi-font;
+            }
+            
+
+        }
     }
+    
 </style>
