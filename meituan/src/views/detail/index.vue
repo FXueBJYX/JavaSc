@@ -20,6 +20,8 @@
             <!-- {{$route.query.id}} -->
         </div>
         
+        <!-- 解决betterscroll和fixed问题放吧是里不行 -->
+        <car v-if="active==0" :list="list"></car>
     </div>
 </template>
 
@@ -29,6 +31,7 @@ import Comment from "../comment/index";
 import Order from '../order/index'
 import axios from 'axios';
 import Merchant from '../merchant/index';
+import car from '../car'
 
 import BetterScroll from 'better-scroll'
 
@@ -44,7 +47,8 @@ import BetterScroll from 'better-scroll'
             DetailHead,
             Comment,
             Merchant,
-            Order
+            Order,
+            car
         },
         created(){
             axios.get(`http://admin.gxxmglzx.com/tender/test/get_store_id?id=${this.id}`)
@@ -82,4 +86,5 @@ import BetterScroll from 'better-scroll'
         overflow: hidden;
         
     }
+    
 </style>

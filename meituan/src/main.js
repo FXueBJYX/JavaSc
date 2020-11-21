@@ -7,6 +7,7 @@ import store from './store'
 
 import '../src/assets/css/common.css'
 import '../src/assets/js/rem'
+import '../src/assets/font/iconfont.css'
 
 import Vant from 'vant';
 import 'vant/lib/index.css';

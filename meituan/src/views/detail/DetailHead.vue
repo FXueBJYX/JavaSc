@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="back" @click="$router.go(-1)">&lt;</div>
+        <div class="back iconfont icon-biaoqing" @click="$router.go(-1)"></div>
         <div class="store-info">
             <!-- <img class="store-img" src="http://admin.gxxmglzx.com/tender/upload/test/store4.png" alt=""> -->
             <img class="store-img" :src="list.img" alt="">

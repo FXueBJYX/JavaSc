@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [
+            { addressid: 2, addressname: "学府三建行", longitude: 126.644432, latitude: 45.735531 },
+            { addressid: 51, addressname: "兄弟们", longitude: 645, latitude: 42 },
+            { addressid: 53, addressname: "造他", longitude: 645, latitude: 42 },
+            { addressid: 54, addressname: "就完了", longitude: 645, latitude: 42 },
+            { addressid: 55, addressname: "黄逸绮棒棒", longitude: 3543, latitude: 5353 },
+            { addressid: 57, addressname: "我做完了", longitude: 666, latitude: 666 },
+            { addressid: 60, addressname: "别删我求求了", longitude: 44, latitude: 545 },
+        ]
+        var arr2 = [
+            {address:"学府三建行"},
+            {address:"兄弟们"},
+            {address:"造他"}
+        ]
+
+
+        // return的是什么var定义的数组里就是什么
+        var arr3 = arr.map((item,index,arr)=>{
+            item.addressname=arr[index].addressname;
+            return {
+                address:item.addressname
+            };
+        })
+
+        console.log(arr);
+        console.log(arr2);
+        console.log(arr3);
+    </script>
+</body>
+</html>
