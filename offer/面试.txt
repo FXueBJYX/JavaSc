@@ -1,0 +1,107 @@
+
+行元素块元素之间的空格是html文件中的空格加回车导致
+解决：1、父元素font-size置0
+2、margin-left设置负值
+
+
+DOCTYPE 
+
+
+Script标签加载js文件默认同步加载     
+异步加载js defer async
+
+async不能保证加载顺序
+
+
+
+css选择器
+标签
+Id
+Class
+父代
+子代
+伪类
+伪元素    （before  after）
+属性
+
+
+优先级  
+!Important > style > id > class/伪类>标签/伪元素
+
+
+
+Position定位
+Absolute：绝对定位 相对于最近定位的已定位的祖先元素
+空间释放
+
+Relative：相对定位 相对于自己初始位置
+空间不释放
+
+Fixed：固定定位 相对于视口
+空间释放
+
+Static：静态
+Sticky：粘性定位   相对于视口  可以实现吸顶
+
+
+Display
+Inline
+Block
+Inlineblock
+Flex
+
+
+None
+
+隐藏元素  display:none     不占空间
+              Visibility         还占空间
+  Opacity         占空间             透明度
+
+
+
+BFC
+
+Overflow
+
+作用
+
+外边距合并
+父子元素都有margin-top时，子元素拐带父元素下降，外边距合并  合成两者中较大的
+解决：1、给父元素加overflow:hidden
+2、给父元素加边框                （transparent:透明色）
+3、子元素 / 父元素浮动或定位   
+
+清除浮动
+
+
+
+
+
+浮动
+脱离文档流  空间释放  塌陷  浮动后的元素的父元素没有高度
+解决：1、给父元素加高度  加子元素应有的高度    （知道子元素应有的高度）
+      2、给父元素加overflow:hidden  （溢出隐藏）  触发了BFC  浮动元素高度参与计算
+  3、浮动元素下面 加一个元素加元素   clear:both
+  4、给父类加类（clearfix） 加伪元素   ::after
+Content:””
+Display:block
+Clear:both
+
+
+
+css盒模型
+组成：margin border padding 元素
+
+标准盒模型：设置的width就是中间元素的宽度 再加padding、margin、后会再向外加宽度
+
+怪异盒模型：ie6以及ie6以下的浏览器中，，不写DOCTYPE默认怪异盒模型。设置的width是border+padding+margin+中间元素宽度，就是就不管怎么加边框、边距，宽度都是起始的宽度
+两种盒模型的转化：box-sizing:content-box	
+
+
+
+
+Css精灵     雪碧图
+大图片上放小图标通过定位
+
+优点：
+缺点：更改开销大

@@ -28,7 +28,7 @@ export default new Vuex.Store({
     // 减号
     reduce(state,{index,typeIndex}){
       let prod = state.prodlist[index].content[typeIndex]
-      if (prod.count) {
+      if (prod.count!=0) {
         // prod.count++;
         Vue.set(prod, 'count', prod.count - 1)
       } else {
