@@ -1,1 +1,4 @@
 /* pages/index/index.wxss */
+button{
+  background-color: rgb(153, 153, 153);
+}
