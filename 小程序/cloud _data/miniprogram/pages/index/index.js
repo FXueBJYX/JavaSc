@@ -77,6 +77,44 @@ Page({
     })
   },
 
+  async getOpenid(){
+    const openId = await wx.cloud.callFunction({
+      name:"openId",
+      
+    })
+    console.log(openId);
+  },
+
+  async betchdel(){
+    const betchdel = await wx.cloud.callFunction({
+      name:"betchDel"
+    })
+    console.log(betchdel);
+  },
+
+
+  
+  async uploadFile(){
+
+    // 1、选择图片：选择相册图片、拍照
+ // 2、把图片上传云存储
+// 3、保存fileID到云数据库
+
+
+    let chooseImage;
+    try{
+      chooseImage = await wx.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+      })
+      console.log(chooseImage);
+    }catch(error){
+      console.error(error);
+    }
+   
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

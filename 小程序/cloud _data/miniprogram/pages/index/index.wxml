@@ -6,4 +6,8 @@
   <button bindtap="select">查找数据</button>
   <view>云函数</view>
   <button bindtap="sum">求和函数</button>
+  <button bindtap="getOpenid">获取用户</button>
+  <button bindtap="betchdel">批量删除</button>
+  <view>云存储</view>
+  <button bindtap="uploadFile">文件上传</button>
 </view>
