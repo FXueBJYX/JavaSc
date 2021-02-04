@@ -1,0 +1,39 @@
+模块  ：原生模块、第三方模块、自定义模块
+使用commonjs衍生   AMD&CMD(requireJS SeaJS)  --Nodejs
+define---创建模块   
+require--加载
+        加载顺序很麻烦      
+ 
+
+
+
+
+继承
+        1、父类要拥有一种方法   把傅雷的成员属性、成员方法拷贝给子类
+        其他语言的继承：extends关键字继承
+        ES5/nNode:使用call方法
+
+        2、子类具备一种方法可以调用到父类的构造函数
+        PHP:consturct()--parent::__constructor()
+        java/es6:super()
+        ES5:  （原型链）child.prototype=parent.prototype
+        Node:util.inherits  consturct.super_
+
+
+callee caller  都表示被谁调用
+callee必须伴随arguments
+0
+
+
+
+
+
+NPM
+     npm命令 
+     npm install  安装第三方包 安装在当前项目目录的node_modules里
+     npm install -g
+
+     npm uninstall
+
+
+

@@ -1,6 +1,0 @@
-模块  ：原生模块、第三方模块、自定义模块
-使用commonjs衍生   AMD&CMD(requireJS SeaJS)  --Nodejs
-define---创建模块   
-require--加载
-        加载顺序很麻烦      
- 
