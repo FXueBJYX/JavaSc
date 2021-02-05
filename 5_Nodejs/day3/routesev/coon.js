@@ -1,8 +1,12 @@
 var fs=require("fs");
 var url=require("url");
-var formidable=require("formidable");
+var formidable =require("formidable");
 
 exports.goIndex=function(res){
+    var pathname=__dirname+"\\static\\"+url.parse("index.html").pathname;
+    var data=fs.readFileSync(pathname);
+    res.writeHead(200,{"Content-type":"text/html"});
+    res.end(data);
 
 }
 exports.goFault=function(res){
@@ -10,7 +14,6 @@ exports.goFault=function(res){
 }
 exports.upload=function(res){
     var pathname=__dirname+"\\static\\"+url.parse("upload.html").pathname;
-    // var pathname=__dirname+"\\statics\\"+url.parse("index.html").pathname;
     
     var pathdata=fs.readFileSync(pathname);
     res.writeHead(200,{"Content-type":"text/html"});
@@ -25,7 +28,7 @@ exports.do_upload=function(req,res){
             var oldpath=files.sfile.path;
             var newpath= __dirname+'\\upload\\ll.jpg';
             var readStream=fs.createReadStream(oldpath);
-            var writeStream=fs.createWriteStream("./upload/11.jpg");
+            var writeStream=fs.createWriteStream("./upload/222.jpg");
             readStream.pipe(writeStream);
 
             readStream.on("end",function(){
@@ -34,14 +37,14 @@ exports.do_upload=function(req,res){
                 res.writeHead(200,{"Content-type":"text/plain"});
                 res.end("upload success"); 
             })
-
+            /*
             fs.rename(oldpath,newpath,function(err,data){
                 if(err){
                     console.log(err);
                 }else{
                     console.log(data);
                 }
-            });
+            });*/
         }
     })
 }
