@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <!--  -->
+    <table border="1">
+      <tr>
+        <th>序号</th>
+        <th>名字</th>
+      </tr>
+      <!-- 循环输出名字  下面的是输出单一变量  相当于vue的{{}} -->
+      <% name.foreach=(function(name,index){ %>
+      <tr>
+        <th><%= index %></th>
+        <th><%= name %></th>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

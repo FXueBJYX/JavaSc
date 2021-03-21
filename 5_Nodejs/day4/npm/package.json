@@ -1,0 +1,18 @@
+{
+  "name": "swod",
+  "version": "1.0.0",
+  "description": "crypto string",
+  "main": "index.js",
+  "config":{
+    "port":8091
+  },
+  "scripts": {
+    "test": "node index.js",
+    "build":"node start.js"
+  },
+  "keywords": [
+    "md5"
+  ],
+  "author": "bjyx",
+  "license": "ISC"
+}

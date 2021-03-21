@@ -1,0 +1,46 @@
+express:Node web框架（MVC模式）
+
+前端后端进行数据交互  1、前端渲染  （数据和模板浏览器合并）
+                    2、后端渲染 （数据和模板服务器合并的）
+
+MVC 
+
+    model(处理数据)
+    View(页面显示)     template(模板语言  hmtl  ejs jade template    pug)
+    Controller(控制器、写业务逻辑)业务逻辑（注册 登录...）
+            vue   {{}}
+            php <?php echo $name>  
+            ejs模板语言
+
+
+
+
+
+1、安装Express
+    npm install -g express
+    npm install -g express-generator
+
+2、通过express创建包含Ejs模板解析的web应用
+    在新建文件夹的上一层用  express -e  xblog
+
+
+    生产环境
+    开发环境
+
+3、启动项目
+node ./bin/www
+
+            www  创建一个webserver Express  下面那句话
+                var server = http.createServer(app);
+                跳到app.js 执行app.js
+                app.js启动路由 
+                响应方法get、post
+                响应地址
+                回调函数function()
+                
+
+
+4、数据显示
+    显示单一变量 <%=  %>
+    显示数组 循环  <% arr.foreach(function(){  %>  <% }) %>
+
