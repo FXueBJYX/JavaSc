@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <!-- state一定要用类组件 -->
+    <script type="text/babel">
+        class Num extends React.Component{
+            constructor(){
+                super()
+                this.state={
+                    num:0
+                }
+            }
+            render(){
+                return(
+                    <div>
+                        <h3>{this.state.num}</h3>
+                        <button onClick={()=>{
+                            // num:this.state.num+1
+                            // console.log(111);
+                            // 修改state用特定的setState({   })
+                            this.setState({
+                                num:this.state.num+1
+                            })
+                        }}>jiayi</button>    
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Num></Num>,
+            document.getElementById("root")
+
+        )
+    </script>
+</body>
+</html>
