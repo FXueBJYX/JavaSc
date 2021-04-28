@@ -1,8 +1,10 @@
 import { createStore } from 'redux'
 
-const state=0;
+const initState={
+    num:0
+};
 const store=createStore(()=>{
 
-},state);
+},initState);
 
 export default store;
